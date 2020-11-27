@@ -6,6 +6,12 @@
         public $model;
         public $color;
 
+        public function __construct(string $brand,string $model, string $color){
+            $this->brand = $brand;
+            $this->model = $model;
+            $this->color = $color;
+        }
+
         public function turnOn() : void {
             print print sprintf("%s %s is running 🚀",$this->brand,$this->model);
         }
@@ -15,11 +21,15 @@
         }
     }
 
-    $obj = new MobileDevice();
-    $obj->brand = "Iphone";
-    $obj->model = "IOS 12";
-    $obj->color = "red";
+    // $obj = new MobileDevice();
+    // $obj->brand = "Iphone";
+    // $obj->model = "IOS 12";
+    // $obj->color = "red";
 
-    var_dump($obj);
-    $obj->turnOn();
-    $obj->makeCall("922924500");
+    $obj1 = new MobileDevice("Iphone","IOS 12","red");
+    $obj2 = new MobileDevice("Xiaomi","Redmi 9","blue");
+
+    var_dump($obj1);
+    var_dump($obj2);
+    // $obj->turnOn();
+    // $obj->makeCall("922924500");
